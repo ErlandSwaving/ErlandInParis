@@ -1,0 +1,127 @@
+Certainly! Here's your complete `style.css` with the newly incorporated code for the photo galleries. This combines what you originally provided with the additional styles for the `photos-container` and `day-photo` classes, including responsive adjustments.
+
+```css
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f5f3f0;
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  background: url('images/paris.jpg') no-repeat center center / cover;
+  padding: 80px 20px;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.banner-content, .banner h1, .banner p {
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner p, .image-page p {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+
+.card {
+  width: calc(33.333% - 2rem);
+  margin-bottom: 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card p {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  padding: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #dcd0c0;
+  color: #333;
+  font-family: 'Lato', sans-serif;
+}
+
+.photos-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.day-photo {
+  width: calc(33.333% - 14px);
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 2rem);
+  }
+
+  .photos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .day-photo {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
+
+
+
